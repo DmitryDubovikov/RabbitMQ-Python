@@ -11,7 +11,7 @@ channel.queue_declare(queue="letterbox")
 for i in range(5):
     message = f"Hello, this is my message, time is {datetime.datetime.now()}"
     channel.basic_publish(exchange="", routing_key="letterbox", body=message)
-    print(f"sent message: {message}")
+    print(f"sent message {i}: {message}")
     time.sleep(0.2)
 
 message = "last message"
