@@ -64,3 +64,12 @@ Run:
     producer.py
 
 Check that consumers received new messages according to their routing_key. Check for exchange="mytopic" in Exchanges in RabbitMQ management.
+
+## 5. Request-Reply
+
+Run:
+
+    client.py
+    server.py
+
+Check that request and reply are sent and recieved. Check Queues in RabbitMQ management.
