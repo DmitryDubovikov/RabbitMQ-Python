@@ -73,3 +73,50 @@ Run:
     server.py
 
 Check that request and reply are sent and recieved. Check Queues in RabbitMQ management.
+
+## 6. Exchange-Exchange
+
+Run:
+
+    consumer.py
+    producer.py
+
+Check that message has gone through multiple exchanges. Check Exchange - Bindings of firstexchange and secondexchange in Exchanges in RabbitMQ management.
+
+## 7. Headers exchange
+
+Run:
+
+    consumer.py
+    producer.py
+
+Check that message is recieved due to match and "x-match": "any" in binding arguments. Check Exchange: headersexchange - Bindings in RabbitMQ management.
+
+## 8. Alternate exchanges
+
+Run:
+
+    consumer.py
+    producer.py
+
+Check that messages are recieved according to routing_key.
+
+## 9. Dead Letter Exchanges
+
+First delete existing queues in Queues in RabbitMQ management to avoid 406, PRECONDITION_FAILED error.
+
+Run:
+
+    consumer.py
+    producer.py
+
+Check that expired (since mainexchangequeue is not consumig) message is received by deadletterqueue.
+
+## 10. Accept/reject messages
+
+Run:
+
+    consumer.py
+    producer.py
+
+Send some (2) messages with producer, check that they are Unacked in Queue letterbox in RabbitMQ management while not delivery_tag % 5 == 0. Send more (3) messages, check that all messages are acked.
